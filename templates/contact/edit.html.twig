@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Formulaire de modification d'un contact
+{% endblock %}
+{% block body %}
+	<section class="py-5 container">
+		<h1>Modifier le contact</h1>
+		{{ form_start(form) }}
+		{{ form_row(form.nom) }}
+		{{ form_row(form.prenom) }}
+		{{ form_row(form.email) }}
+		{{ form_row(form.telephone) }}
+		{{ form_row(form.submit, {'label': 'Modifier'})}}
+		{{ form_end(form) }}
+	</section>
+{% endblock %}

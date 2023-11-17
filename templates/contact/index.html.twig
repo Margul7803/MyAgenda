@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de contact
+{% endblock %}
+
+{% block body %}
+	<h1 class="container">Liste de contact</h1>
+	<div class="container">
+		<form action="/contact/create">
+			<button type="submit" class="btn btn-outline-primary">
+				<i class="bi bi-person-plus-fill"></i>
+			</button>
+		</form>
+	</br>
+</div>
+<table class="table container">
+	<tbody>
+		{% for contact in contacts %}
+			<tr>
+				<td>{{ contact.prenom }}</td>
+				<td class="row">
+					<div class="col-auto">
+						<form action="/contact/info/{{contact.id}}">
+							<button type="submit" class="btn btn-outline-info">
+								<i class="bi bi-info-circle-fill"></i>
+							</button>
+						</form>
+					</div>
+					<div class="col-auto">
+						<form action="/contact/edit/{{contact.id}}">
+							<button type="submit" class="btn btn-outline-dark">
+								<i class="bi bi-pencil-fill"></i>
+							</button>
+						</form>
+					</div>
+					<div class="col-auto">
+						<form action="/contact/delete/{{contact.id}}">
+							<button type="submit" class="btn btn-outline-danger">
+								<i class="bi bi-trash-fill"></i>
+							</button>
+						</form>
+					</div>
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</tbody></table>{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Info contact
+	{{ contact.prenom }}
+{% endblock %}
+
+{% block body %}
+	<h1 class="container">Info contact:
+		{{ contact.prenom }}</h1>
+	<table class="table container">
+		<tbody>
+			<tr>
+				<th scope="row">Prénom:</th>
+				<td>{{ contact.prenom }}</td>
+			</tr>
+			<tr>
+				<th scope="row">Nom:</th>
+				<td>{{ contact.nom }}</td>
+			</tr>
+			<tr>
+				<th scope="row">Email:</th>
+				<td>{{ contact.email }}</td>
+			</tr>
+			<tr>
+				<th scope="row">Téléphone:</th>
+				<td>{{ contact.telephone }}</td>
+			</tr>
+		</tbody>
+	</table>
+{% endblock %}
